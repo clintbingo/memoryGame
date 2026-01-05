@@ -19,6 +19,28 @@ var seconds = 0
 var timeRunning = false
 var timeinterval
 
+// function to start game
+function startGame(){
+    var gameBoard = document.getElementById("gameBoard");
+    gameBoard.innerHTML = "";
+    //duplicates images in the array
+    var cardImages = images.concat(images);
+
+    //shuffle the cards
+    cardImages.sort(function(){
+        return Math.random() - 0.5;
+    })
+
+    for(var i = 0; i < cardImages.length; i++){
+        var card = document.createElement('div');
+        card.className = "card";
+        card.innerHtml = `<div class="card-front"><i class="fas fa-heart"></i></div>
+                <div class="card-back"><img src="${cardImages[i]}" alt=""></div>`
+        card.onclick = flipCard()
+        card.dataset.image = cardImages[i]
+        gameBoard.appendChild(card)
+    }
+}
 
 
 
@@ -35,6 +57,4 @@ var timeinterval
 
 
 
-const cardHTML = `<div class="card-front"><i class="fas fa-heart"></i></div>
-                <div class="card-back"><img src="" alt=""></div>`
 
