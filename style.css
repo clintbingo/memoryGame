@@ -102,3 +102,29 @@ h1{
     height: 100%;
     object-fit: cover;
 }
+/* css for the controls */
+.controls{
+    text-align: center;
+}
+.btn{
+    background: #98d8c8;
+    color: white;
+    border: 5px solid white;
+    padding: 15px 40px;
+    border-radius:20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #7ab8a8;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 9px 0 #7ab8a8;
+}
+
+.btn:active{
+    transform: translateX(2px);
+    box-shadow: 0 3px 0 #7ab8a8;
+}
+
