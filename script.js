@@ -1,0 +1,40 @@
+var images = [
+            'https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=400',
+            'https://images.unsplash.com/photo-1548681528-6a5c45b66b42?w=400',
+            'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=400',
+            'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=400',
+            'https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?w=400',
+            'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400',
+            'https://images.unsplash.com/photo-1560807707-8cc77767d783?w=400',
+            'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400'
+        ];
+
+
+var firstCard = null
+var secondCard = null
+var canFlip = true
+var matches = 0
+var moves = 0
+var seconds = 0
+var timeRunning = false
+var timeinterval
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const cardHTML = `<div class="card-front"><i class="fas fa-heart"></i></div>
+                <div class="card-back"><img src="" alt=""></div>`
+
