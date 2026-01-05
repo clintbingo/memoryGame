@@ -144,3 +144,36 @@ h1{
 .modal.show{
     display: flex;
 }
+
+
+.modal-content{
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 10px 0 #d4a574;
+    border: 6px solid #ff6b9d;
+    animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+}
+
+.modal-content h2{
+    color: #ff6b9d;
+    font-size: 2.8em;
+    margin-bottom: 20px;
+}
+
+.modal-content p{
+    color: #ffa07a;
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
