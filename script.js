@@ -53,6 +53,29 @@ function startGame(){
     clearInterval(timeInterval)
 }
 
+function flipCard(){
+    if (!canFlip) return
+
+    if(this.classList.contains("flipped")) return
+    if(this.classList.contains("matched")) return
+    
+    if(!timerRunning){
+        startTimer()
+    }
+
+    this.classList.add("flipped")
+
+    if(firstCard == null){
+        firstCard = this;
+    } else{
+        secondCard = this;
+        canFlip =false;
+        moves++
+        updateStats()
+        checkMatch()
+    }
+}
+
 
 
 
