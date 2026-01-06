@@ -10,14 +10,14 @@ var images = [
         ];
 
 
-var firstCard = null
-var secondCard = null
-var canFlip = true
-var matches = 0
-var moves = 0
-var seconds = 0
-var timeRunning = false
-var timeinterval
+var firstCard = null;
+var secondCard = null;
+var canFlip = true;
+var matches = 0;
+var moves = 0;
+var seconds = 0;
+var timeRunning = false;
+var timeInterval;
 
 // function to start game
 function startGame(){
@@ -40,7 +40,20 @@ function startGame(){
         card.dataset.image = cardImages[i]
         gameBoard.appendChild(card)
     }
+    firstCard = null;
+    secondCard = null;
+    canFlip = true;
+    matches = 0;
+    moves = 0;
+    seconds = 0;
+    timeRunning = false;
+    
+
+    updateStats();
+    clearInterval(timeInterval)
 }
+
+
 
 
 
