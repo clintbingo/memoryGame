@@ -101,13 +101,23 @@ function checkMatch(){
     }
 }
 
+
+
 function resetCard(){
     firstCard = null
     secondCard = null
     canFlip= true
 }
 
+function startTimer(){
+    timerRunning = true
+    timerInterval = setInterval(() => {
+        seconds++
+        updateStats()
+    }, 1000);
+}
 
+startGame()
 
 
 
