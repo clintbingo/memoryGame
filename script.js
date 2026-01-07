@@ -120,6 +120,12 @@ function startTimer(){
 function updateStats(){
     document.getElementById('moves').textContent = moves
     document.getElementById('matches').textContent = matches + "/8"
+
+    var mins = Math.floor(seconds / 60)
+    var secs = seconds % 60
+    if(secs < 10) secs = "0" + secs
+    document.getElementById('time').textContent = mins + ":" + secs
+
 }
 
 
