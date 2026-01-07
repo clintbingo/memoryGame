@@ -76,7 +76,32 @@ function flipCard(){
     }
 }
 
+function checkMatch(){
+    var match = firstCard.dataset.image == secondCard.dataset.image;
 
+    if(match){
+        setTimeout(()=>{
+            firstCard.classList.add("matched")
+            secondCard.classList.add("matched")
+            matches++;
+            updateStats()
+            resetCards()
+
+            if(matches = 8){
+                endGame()
+            }
+
+        }, 500);
+    }else{
+        setTimeout(()=>{
+            firstCard.classList.remove("flipped")
+            secondCard.classList.remove("flipped")
+            resetCards()
+        }, 1000);
+    }
+
+
+}
 
 
 
