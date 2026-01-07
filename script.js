@@ -117,6 +117,12 @@ function startTimer(){
     }, 1000);
 }
 
+function updateStats(){
+    document.getElementById('moves').textContent = moves
+    document.getElementById('matches').textContent = matches + "/8"
+}
+
+
 startGame()
 
 
