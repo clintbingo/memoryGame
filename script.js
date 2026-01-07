@@ -99,10 +99,13 @@ function checkMatch(){
             resetCards()
         }, 1000);
     }
-
-
 }
 
+function resetCard(){
+    firstCard = null
+    secondCard = null
+    canFlip= true
+}
 
 
 
