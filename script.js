@@ -16,27 +16,29 @@ var canFlip = true;
 var matches = 0;
 var moves = 0;
 var seconds = 0;
-var timeRunning = false;
+var timerRunning = false;
 var timerInterval;
 
 // function to start game
 function startGame() {
     var gameBoard = document.getElementById("gameBoard");
     gameBoard.innerHTML = "";
+
     //duplicates images in the array
     var cardImages = images.concat(images);
 
     //shuffle the cards
     cardImages.sort(function () {
         return Math.random() - 0.5;
-    })
+    });
 
+    //create card elements
     for (var i = 0; i < cardImages.length; i++) {
         var card = document.createElement('div');
-        card.className = "card";
-        card.innerHtml = `<div class="card-front"><i class="fas fa-heart"></i></div>
-                <div class="card-back"><img src="${cardImages[i]}" alt=""></div>`
-        card.onclick = flipCard()
+        card.className = 'card';
+        card.innerHtml = '<div class="card-front"><i class="fas fa-heart"></i></div>'+
+                '<div class="card-back"><img src="'+ cardImages[i] +'"></div>';
+        card.onclick = flipCard;
         card.dataset.image = cardImages[i]
         gameBoard.appendChild(card)
     }
@@ -50,17 +52,17 @@ function startGame() {
 
 
     updateStats();
-    clearInterval(timeInterval)
+    clearInterval(timerInterval)
 }
 
 function flipCard() {
-    if (!canFlip) return
+    if (!canFlip) return;
 
-    if (this.classList.contains("flipped")) return
-    if (this.classList.contains("matched")) return
+    if (this.classList.contains('flipped')) return;
+    if (this.classList.contains('matched')) return;
 
     if (!timerRunning) {
-        startTimer()
+        startTimer();
     }
 
     this.classList.add("flipped")
@@ -87,7 +89,7 @@ function checkMatch() {
             updateStats()
             resetCards()
 
-            if (matches = 8) {
+            if (matches == 8) {
                 endGame()
             }
 
