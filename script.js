@@ -21,8 +21,8 @@ var timerInterval;
 
 // function to start game
 function startGame() {
-    var gameBoard = document.getElementById("gameBoard");
-    gameBoard.innerHTML = "";
+    var gameBoard = document.getElementById('gameBoard');
+    gameBoard.innerHTML = '';
 
     //duplicates images in the array
     var cardImages = images.concat(images);
@@ -36,10 +36,10 @@ function startGame() {
     for (var i = 0; i < cardImages.length; i++) {
         var card = document.createElement('div');
         card.className = 'card';
-        card.innerHtml = '<div class="card-front"><i class="fas fa-heart"></i></div>'+
+        card.innerHTML = '<div class="card-front"><i class="fas fa-heart"></i></div>' +
                 '<div class="card-back"><img src="'+ cardImages[i] +'"></div>';
         card.onclick = flipCard;
-        card.dataset.image = cardImages[i]
+        card.dataset.image = cardImages[i];
         gameBoard.appendChild(card)
     }
     firstCard = null;
@@ -48,8 +48,7 @@ function startGame() {
     matches = 0;
     moves = 0;
     seconds = 0;
-    timeRunning = false;
-
+    timerRunning = false;
 
     updateStats();
     clearInterval(timerInterval)
@@ -90,7 +89,7 @@ function checkMatch() {
             resetCards()
 
             if (matches == 8) {
-                endGame()
+                endGame();
             }
 
         }, 500);
@@ -105,7 +104,7 @@ function checkMatch() {
 
 
 
-function resetCard() {
+function resetCards() {
     firstCard = null
     secondCard = null
     canFlip = true
@@ -132,14 +131,16 @@ function updateStats() {
 
 function endGame() {
     clearInterval(timerInterval)
-    document.getElementById("firstMoves").textContent = moves;
+    document.getElementById("finalMoves").textContent = moves;
     document.getElementById("finalTime").textContent = document.getElementById('time').textContent;
     document.getElementById("winModal").classList.add("show");
+    console.log(moves);
+    console.log()
 }
 
 function newGame(){
     document.getElementById('winModal').classList.remove('show');
-    clearInterval(timerInterval)
+    clearInterval(timerInterval);
     startGame();
 }
 
